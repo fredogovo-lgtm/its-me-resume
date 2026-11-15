@@ -1,0 +1,8 @@
+/work/
+/outputs/
+/node_modules/
+*.log
+.env
+.env.*
+*.itsme-backup
+**/ai-credentials.json*

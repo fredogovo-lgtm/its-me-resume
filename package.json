@@ -1,0 +1,26 @@
+{
+  "name": "its-me-desktop",
+  "productName": "ITS ME",
+  "version": "0.15.1",
+  "private": true,
+  "description": "ITS ME 离线个人资料与简历工作台",
+  "type": "module",
+  "main": "app/desktop/main.mjs",
+  "scripts": {
+    "start": "node tools/dev.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "setup": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/setup-runtime.ps1",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/package.ps1",
+    "installer": "node tools/build-installer.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "electron-builder": "26.18.0"
+  },
+  "dependencies": {
+    "mammoth": "1.13.0",
+    "pdfjs-dist": "6.5.438"
+  }
+}

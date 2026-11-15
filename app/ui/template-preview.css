@@ -1,0 +1,21 @@
+.template-live-preview{width:96px;max-width:100%;margin:0 auto;position:relative;overflow:hidden;background:#fff;border:1px solid #dfe5ee;border-radius:2px;pointer-events:none;text-align:left}
+.template-live-preview .template-preview-pages{position:absolute;left:0;top:0;transform-origin:top left;pointer-events:none}
+.template-live-preview .paper-wrap{margin:0}
+.template-live-preview .paper-number{display:none}
+.template-live-preview .resume-paper{box-shadow:none}
+.template-choice .template-live-preview{width:54px;margin:0}
+.template-live-caption{display:block;margin-top:7px;font-size:10px;font-style:normal;font-weight:400;line-height:1.5;color:#68768a}
+.template-layout-note{display:block;margin-top:7px;color:#896421;font-size:10px;line-height:1.7;white-space:normal}
+.template-layout-note[hidden]{display:none!important}
+.template-preview-tools{display:grid;gap:8px;margin-top:15px;width:100%}
+.template-preview-tools>.button{width:100%;font-size:11px;padding:7px 8px}
+.template-preview-provenance{font-size:10px;line-height:1.7;color:#806128}
+.template-preview-provenance[hidden]{display:none!important}
+.template-preview-dialog{padding:16px;background:#eef0f4;max-height:calc(86vh - 160px);overflow:auto;scrollbar-gutter:stable}
+.template-preview-meta{max-width:650px;margin:0 auto 16px;font-size:12px;color:#4e5a6b;line-height:1.7}
+.template-preview-meta strong{font-size:13px;color:#26343f}
+.template-preview-meta p{margin:5px 0 0}
+.template-preview-sheet-area{position:relative;margin:0 auto;overflow:hidden}
+.template-preview-document{position:absolute;top:0;left:0;transform-origin:top left;text-align:left}
+.template-preview-document .resume-paper{box-shadow:0 3px 14px #26343f20}
+@media print{.template-preview-tools,.template-preview-dialog{display:none!important}}

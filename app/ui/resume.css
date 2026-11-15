@@ -1,0 +1,110 @@
+.resume-paper { position: relative; background: #fff; overflow: hidden; color: #26343f; font-family: "Microsoft YaHei", sans-serif; font-size: 10.5pt; line-height: 1.65; text-align: left; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.resume-paper, .resume-paper * { box-sizing: border-box; }
+.paper-wrap { position: relative; margin: 0 auto 34px; width: fit-content; }
+.paper-number { position: absolute; bottom: -23px; width: 100%; text-align: center; color: #819098; font-size: 11px; }
+.resume-block { position: absolute; overflow-wrap: anywhere; white-space: normal; z-index: 2; }
+.resume-block.kind-line, .resume-block.kind-shape { z-index: 1; }
+.resume-block .block-heading { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+.resume-block .block-title { margin: 0; padding: 0; font-size: 1.12em; line-height: 1.5; font-weight: 700; }
+.resume-block .block-category { margin: 0 0 2mm; border-bottom: .3mm solid #d9e3e4; padding-bottom: 1.1mm; color: var(--resume-accent); font-size: .9em; font-weight: 700; }
+.resume-block .block-subtitle { margin-top: .6mm; font-size: .95em; color: inherit; opacity: .85; white-space: pre-wrap; }
+.resume-block .block-body { margin-top: 2mm; white-space: pre-wrap; }
+.resume-block .block-period { white-space: nowrap; color: #62727d; font-size: .79em; }
+.resume-block.kind-profile .block-content { border-bottom: .6mm solid var(--resume-accent); padding-bottom: 4mm; }
+.resume-block.kind-profile .block-heading { display: block; }
+.resume-block.kind-profile .block-title { color: var(--resume-accent); font-size: 2.6em; font-weight: 700; letter-spacing: .05em; line-height: 1.2; }
+.resume-block.kind-profile .block-subtitle { margin-top: 2mm; font-weight: 600; font-size: 1.16em; }
+.resume-block.kind-profile .block-body { margin-top: 2.4mm; font-size: .85em; line-height: 1.8; }
+.paper-sidebar { position: absolute; inset: 0 auto 0 0; width: calc(min(53mm, 28%) + 26mm); background: #eef5f3; z-index: 0; }
+.template-sidebar .resume-block .block-heading { display: block; }
+.template-sidebar .resume-block .block-period { display: block; margin-top: .5mm; }
+.template-sidebar .resume-block.kind-profile .block-title { font-size: 2.4em; }
+.block-drag { display: none; }
+.print-document { margin: 0; padding: 0; }
+.print-document .paper-wrap { margin: 0; }
+.print-document .paper-number { display: none; }
+@media print {
+  html, body { margin: 0 !important; padding: 0 !important; background: #fff; }
+  .paper-wrap { margin: 0; break-after: page; }
+  .paper-wrap:last-child { break-after: auto; }
+  .resume-paper { box-shadow: none !important; }
+  .paper-number, .block-drag { display: none !important; }
+}
+
+/* Text frames keep full-content measurement separate from preview controls. */
+.resume-block .block-content { display: flow-root; width: 100%; min-height: 6mm; }
+.resume-block .block-heading { min-width: 0; }
+.resume-block .block-title { min-width: 0; flex: 1 1 auto; white-space: pre-wrap; }
+.resume-block .block-period { min-width: 0; flex: 0 1 auto; white-space: normal; text-align: right; }
+.resume-block.has-font-weight .block-title,
+.resume-block.has-font-weight .block-category,
+.resume-block.has-font-weight .block-subtitle { font-weight: inherit; }
+.resume-block.has-line-height .resume-text { line-height: inherit; }
+.resume-block.has-text-align .block-heading { display: block; }
+.resume-block.has-text-align .block-period { display: block; text-align: inherit; }
+#resume-pages .resume-block[data-interactive] { outline: 1px solid #b9c5d540; outline-offset: 0; }
+#resume-pages .resume-block[data-interactive]:hover { outline: 1px solid #94b9eb; outline-offset: 0; }
+#resume-pages .resume-block[data-interactive].selected { outline: 1.4px solid #007aff; outline-offset: 0; z-index: 5; }
+#resume-pages .resume-block.selected::after { content: none; }
+#resume-pages .resume-block[data-interactive].is-locked { outline-style: dashed; }
+#resume-pages .resume-block[data-interactive].has-overflow,
+#resume-pages .resume-block[data-interactive].outside-paper { outline: 1.5px solid #d93636; }
+.block-resize, .block-frame-edge, .block-overflow-badge { display: none; }
+#resume-pages .block-frame-edge { position: absolute; z-index: 6; cursor: move; touch-action: none; }
+#resume-pages .resume-block.selected .block-frame-edge { display: block; }
+#resume-pages .block-frame-edge.edge-n { left: 6px; right: 6px; top: -3px; height: 6px; }
+#resume-pages .block-frame-edge.edge-s { left: 6px; right: 6px; bottom: -3px; height: 6px; }
+#resume-pages .block-frame-edge.edge-w { top: 6px; bottom: 6px; left: -3px; width: 6px; }
+#resume-pages .block-frame-edge.edge-e { top: 6px; bottom: 6px; right: -3px; width: 6px; }
+#resume-pages .block-resize { position: absolute; z-index: 8; width: 10px; height: 10px; min-width: 0; margin: 0; padding: 0; border: 1.4px solid #007aff; border-radius: 2px; background: #fff; touch-action: none; }
+#resume-pages .resume-block.selected .block-resize { display: block; }
+#resume-pages .block-resize.resize-n { top: -5px; left: calc(50% - 5px); cursor: ns-resize; }
+#resume-pages .block-resize.resize-s { bottom: -5px; left: calc(50% - 5px); cursor: ns-resize; }
+#resume-pages .block-resize.resize-e { right: -5px; top: calc(50% - 5px); cursor: ew-resize; }
+#resume-pages .block-resize.resize-w { left: -5px; top: calc(50% - 5px); cursor: ew-resize; }
+#resume-pages .block-resize.resize-ne { right: -5px; top: -5px; cursor: nesw-resize; }
+#resume-pages .block-resize.resize-nw { left: -5px; top: -5px; cursor: nwse-resize; }
+#resume-pages .block-resize.resize-se { right: -5px; bottom: -5px; cursor: nwse-resize; }
+#resume-pages .block-resize.resize-sw { left: -5px; bottom: -5px; cursor: nesw-resize; }
+#resume-pages .block-drag { touch-action: none; border-color: #b5cae8; color: #0068d9; }
+#resume-pages .resume-block.dragging { user-select: none; }
+#resume-pages .block-overflow-badge:not([hidden]) { display: block; position: absolute; bottom: -21px; left: 0; z-index: 9; padding: 2px 5px; background: #d93636; color: #fff; border-radius: 3px; font: 10px/1.4 "Microsoft YaHei", sans-serif; white-space: nowrap; pointer-events: none; }
+.selected-attachments .attachment-preview { width: 100%; padding: 8px 14px; display: flex; align-items: center; gap: 8px; border: 0; background: transparent; color: #465368; text-align: left; cursor: pointer; }
+.selected-attachments .attachment-preview:hover { background: #edf4ff; }
+.selected-attachments .attachment-preview span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media print {
+  .block-resize, .block-frame-edge, .block-overflow-badge { display: none !important; }
+  .resume-block { outline: none !important; }
+}
+/* Decoration is applied to leaf runs so local overrides can remove it. */
+.resume-block[data-interactive].has-fixed-height .block-content { max-height: 100%; overflow: hidden; min-height: 0; }
+
+/* Drag preview lives outside a clipped source paper while moving across pages. */
+.drag-preview { position:fixed;z-index:1000;pointer-events:none;transform-origin:top left;opacity:.8;outline:1px dashed #007aff;box-sizing:border-box; }
+.drag-preview .block-drag,.drag-preview .block-resize,.drag-preview .block-frame-edge,.drag-preview .block-overflow-badge { display:none!important; }
+.drag-preview.invalid-drop { opacity:.35;outline-color:#b96060; }
+#resume-pages .resume-block.drag-origin { opacity:.2; }
+#resume-pages .resume-paper.drop-target { outline:2px solid #007aff;outline-offset:3px; }
+.language-review { flex-wrap:wrap;gap:6px; }
+
+/* Keep measured English dates readable while long titles use the remaining width. */
+.resume-block .block-heading.reserve-date-column .block-title { flex: 1 1 0; }
+.resume-block .block-heading.reserve-date-column .block-period { flex: 0 0 auto; max-width: 44%; overflow-wrap: normal; word-break: normal; white-space: normal; }
+.template-sidebar .resume-block .block-heading.reserve-date-column .block-period,
+.resume-block.has-text-align .block-heading.reserve-date-column .block-period { max-width: 100%; text-align: inherit; }
+/* These marks are real paper content and are also emitted by Chromium PDF. */
+.resume-link { color: inherit; text-decoration: underline; text-underline-offset: .12em; }
+.block-links { margin-top: 1.5mm; font-size: .9em; overflow-wrap: anywhere; }
+.continuation-marker { font-size: .72em; font-weight: 400; color: #62727d; white-space: nowrap; margin-left: 1mm; }
+.document-running-header { position: absolute; top: 8mm; left: 16mm; right: 16mm; height: 7mm; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; border-bottom: .2mm solid #d9e3e4; color: #62727d; font-size: 9pt; line-height: 1.5; z-index: 3; }
+.document-page-number { position: absolute; bottom: 7mm; left: 16mm; right: 16mm; height: 5mm; text-align: center; color: #62727d; font-size: 9pt; line-height: 1.5; z-index: 3; }
+#document-quality-warning { background: #f2f7fa; padding: 8px 14px; font-size: 12px; color: #465368; }
+.document-quality-preview { max-height: 56vh; overflow: auto; padding: 14px; background: #e8edf1; }
+.document-quality-preview .paper-wrap { zoom: .48; margin-bottom: 34px; }
+.document-quality-dialog { min-width: min(620px, 78vw); }
+.document-quality-options { padding-bottom: 10px; }
+.document-quality-dialog [data-quality-summary] { color: #465368; font-size: 12px; }
+.document-style-status { color: #62727d; font-size: 11px; }
+
+.resume-paper.no-section-rules .block-category{border-bottom:none}.resume-paper.no-profile-rule .resume-block.kind-profile .block-content{border-bottom:none}
+#resume-pages .resume-block.canvas-group-selected:not(.selected){outline:1px dashed #007aff} .template-decoration-controls summary{cursor:pointer;font-weight:600;font-size:12px}.template-decoration-controls .button{white-space:normal}

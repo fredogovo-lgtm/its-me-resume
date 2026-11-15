@@ -1,0 +1,6 @@
+.review-warning, .layout-warning { display:flex; align-items:center; flex-wrap:wrap; gap:4px 10px; padding:8px 16px; background:#fff8e6; color:#805a17; border-top:1px solid #f1dfb6; font-size:12px; line-height:1.55; }
+.review-warning[hidden], .layout-warning[hidden] { display:none; }
+.review-warning > span, .layout-warning > span { flex:1 1 230px; }
+.review-warning .button, .layout-warning .button { min-height:28px; padding:3px 7px; color:#79520d; white-space:nowrap; }
+#resume-pages .resume-block.has-text-overlap:not(.selected) { outline:1.5px solid #c57a16; }
+@media print { .review-warning, .layout-warning { display:none!important; } }

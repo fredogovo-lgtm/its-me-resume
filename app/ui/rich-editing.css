@@ -1,0 +1,22 @@
+.rich-selection-toolbar { padding: 16px; border-bottom: 1px solid #e5e7eb; background: #f8faff; }
+.rich-toolbar-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.rich-toolbar-heading h3 { font-size: 13px; margin: 0; font-weight: 600; color: #202a38; }
+.rich-toolbar-heading .tag { font-size: 10px; }
+.rich-selection-status { min-height: 2.8em; margin: 8px 0 10px; color: #58677b; font-size: 11px; line-height: 1.4; }
+.rich-format-buttons { display: flex; gap: 5px; margin-bottom: 10px; }
+.rich-format-buttons button { display: inline-flex; justify-content: center; align-items: center; min-width: 35px; height: 30px; padding: 0 9px; border: 1px solid #cfd8e5; border-radius: 6px; background: #fff; color: #26343f; font: 14px/1 Arial, sans-serif; cursor: pointer; }
+.rich-format-buttons button[aria-pressed="true"] { color: #0065d3; border-color: #9bc3fa; background: #e7f1ff; }
+.rich-format-buttons button:hover:not(:disabled) { border-color: #007aff; }
+.rich-format-buttons button.rich-clear { margin-left: auto; font: 11px/1 "Microsoft YaHei", sans-serif; }
+.rich-format-details { display: grid; grid-template-columns: minmax(0,1fr) 45px; gap: 9px 8px; }
+.rich-format-details label { display: flex; flex-direction: column; gap: 5px; min-width: 0; color: #58677b; font-size: 11px; }
+.rich-format-details label:first-child { grid-column: 1/-1; }
+.rich-format-details input, .rich-format-details select { min-width: 0; width: 100%; height: 29px; border: 1px solid #cfd8e5; border-radius: 6px; padding: 4px 7px; background: #fff; color: #26343f; font-size: 11px; }
+.rich-format-details input[type="color"] { padding: 3px; }
+.rich-selection-toolbar :disabled { opacity: .45; cursor: default; }
+.rich-selection-toolbar :focus-visible { outline: 2px solid #007aff; outline-offset: 2px; }
+@media print { .rich-selection-toolbar { display: none !important; } }
+.rich-selection-toolbar[hidden], .rich-selection-toolbar [hidden] { display: none !important; }
+.rich-selection-toolbar:not(.has-rich-selection) { padding-block: 12px; }
+.rich-selection-toolbar:not(.has-rich-selection) .rich-toolbar-heading .tag { display: none; }
+.rich-selection-toolbar:not(.has-rich-selection) .rich-selection-status { min-height: 0; margin-bottom: 0; }

@@ -1,0 +1,51 @@
+.modal:has(.backup-preview-shell) { width:min(1080px,calc(100vw - 56px)); max-width:none; }
+.modal:has(.backup-preview-shell)>header { padding-bottom:18px; }
+.modal:has(.backup-preview-shell) #modal-content { padding:0; }
+.backup-preview-shell { display:grid; grid-template-columns:220px minmax(0,1fr); min-height:470px; max-height:calc(100vh - 210px); }
+.backup-version-list { padding:12px; background:#f6f7fa; border-right:1px solid #e5e8ed; overflow:auto; }
+.backup-version-option { display:block; width:100%; padding:13px 11px; border:1px solid transparent; border-radius:8px; background:transparent; text-align:left; color:#485467; margin-bottom:7px; }
+.backup-version-option strong,.backup-version-option time,.backup-version-option small { display:block; overflow-wrap:anywhere; }
+.backup-version-option strong { font-size:12px; font-weight:600; }
+.backup-version-option time { margin-top:6px; font-size:11px; color:#667386; }
+.backup-version-option small { margin-top:6px; font-size:10px; color:#7d8899; }
+.backup-version-option:hover { background:#edf2fb; }
+.backup-version-option.selected { background:#e8f1ff; border-color:#c7dcfa; color:#0069d9; }
+.backup-preview-detail { min-width:0; padding:24px; overflow:auto; }
+.backup-preview-heading h2,.backup-preview-detail>h2 { font-size:19px; }
+.backup-preview-heading p { margin-top:7px; color:#727d8e; font-size:12px; }
+.backup-preview-tabs,.backup-language-switch { display:flex; gap:5px; margin:20px 0 16px; }
+.backup-preview-tabs { padding-bottom:10px; border-bottom:1px solid #e6e9ef; }
+.backup-preview-tabs button,.backup-language-switch button { padding:7px 12px; border:0; border-radius:6px; background:transparent; color:#65748a; font-size:12px; }
+.backup-preview-tabs button[aria-pressed="true"],.backup-language-switch button[aria-pressed="true"] { color:#006bdc; background:#eaf2ff; }
+.backup-preview-shell [hidden] { display:none !important; }
+.backup-content-section { margin-top:22px; }
+.backup-content-section h3,.backup-changes h3 { font-size:13px; color:#344359; margin:18px 0 12px; }
+.backup-value-row { display:grid; grid-template-columns:130px minmax(0,1fr); gap:12px; padding:8px 0; border-bottom:1px solid #eef0f4; font-size:12px; line-height:1.7; }
+.backup-value-row dt { color:#6c788b; }
+.backup-value-row dd { margin:0; white-space:pre-wrap; overflow-wrap:anywhere; color:#293649; }
+.backup-entry-preview,.backup-change-item { border:1px solid #e0e6ef; border-radius:8px; padding:11px 13px; margin:9px 0; }
+.backup-entry-preview>summary,.backup-change-item>summary { color:#344359; font-size:12px; cursor:pointer; overflow-wrap:anywhere; line-height:1.6; }
+.backup-entry-content dl { margin:10px 0 4px; }
+.backup-file-preview { border-bottom:1px solid #e8ebf0; padding:12px 0; }
+.backup-file-preview strong { font-size:12px; overflow-wrap:anywhere; }
+.backup-file-preview p { color:#758196; font-size:11px; margin-top:6px; }
+.backup-muted,.backup-restore-intro { color:#68758a; font-size:12px; line-height:1.8; margin:12px 0; overflow-wrap:anywhere; }
+.backup-empty { padding:30px 8px; color:#65748a; font-size:13px; line-height:1.8; }
+.backup-compare-picker { display:flex; gap:12px; align-items:center; font-size:12px; color:#65748a; }
+.backup-compare-picker select { min-width:0; padding:7px 9px; border:1px solid #d6deea; border-radius:7px; background:#fff; font-size:12px; color:#344359; }
+.backup-change-summary { background:#edf4ff; border-radius:8px; padding:12px; color:#315c93; font-size:12px; line-height:1.8; }
+.backup-change-detail { border-bottom:1px solid #e7ebf2; padding:11px 0; }
+.backup-change-detail>summary { font-size:12px; color:#4c5c73; cursor:pointer; }
+.backup-change-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:12px; }
+.backup-change-grid>div { background:#f7f8fb; border-radius:7px; padding:11px; min-width:0; }
+.backup-change-grid strong { font-size:11px; color:#72809a; font-weight:500; }
+.backup-change-grid pre { white-space:pre-wrap; overflow-wrap:anywhere; color:#2d3c51; font:12px/1.8 "Segoe UI","Microsoft YaHei",sans-serif; margin:8px 0 0; }
+.backup-change-item.is-added { border-left:3px solid #68a685; }
+.backup-change-item.is-removed { border-left:3px solid #ca8882; }
+.backup-change-item.is-modified { border-left:3px solid #6d9bd4; }
+.backup-change-item h4 { font-size:12px; margin:16px 0 8px; color:#5d6d84; }
+.backup-file-change { padding:10px 12px; margin:8px 0; background:#f7f9fc; border-radius:6px; color:#485970; font-size:12px; overflow-wrap:anywhere; }
+.backup-preview-actions { border-top:1px solid #e6eaf1; padding-top:17px; margin-top:24px; display:flex; align-items:center; justify-content:flex-end; gap:12px; }
+.backup-preview-actions p { color:#758196; font-size:11px; line-height:1.7; margin-right:auto; max-width:400px; }
+.backup-dirty-warning { margin:16px 0; padding:11px 13px; border:1px solid #ead4a8; border-radius:7px; background:#fff9ed; color:#856321; font-size:12px; line-height:1.8; }
+@media(max-width:900px){.backup-preview-shell{grid-template-columns:185px minmax(0,1fr)}.backup-preview-detail{padding:18px}.backup-value-row{grid-template-columns:100px minmax(0,1fr)}.backup-preview-actions{flex-wrap:wrap}.backup-preview-actions p{width:100%;max-width:none}}

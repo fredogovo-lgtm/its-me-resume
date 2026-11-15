@@ -1,0 +1,11 @@
+{
+  "version": "45.2.3",
+  "platform": "win32-x64",
+  "archive": "electron-v45.2.3-win32-x64.zip",
+  "archiveUrl": "https://github.com/electron/electron/releases/download/v45.2.3/electron-v45.2.3-win32-x64.zip",
+  "checksumsUrl": "https://github.com/electron/electron/releases/download/v45.2.3/SHASUMS256.txt",
+  "sha256": "489cd061908e697394b004298bf5ffd345c935d10e8ca197ba819f019ab2dec0",
+  "source": "Official electron/electron release; matched SHASUMS256.txt on 2026-11-06",
+  "archiveBytes": 158182975,
+  "executableSha256": "15e815a2d04aed1a01787354b93cd2cab425f339b3beaef4f9e4193647f5399b"
+}

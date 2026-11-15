@@ -1,0 +1,23 @@
+.workspace-panel-controls { display:flex; align-items:center; gap:4px; padding-left:10px; border-left:1px solid #e4e7ed; }
+.workspace-panel-controls button { display:inline-flex; align-items:center; justify-content:center; min-width:29px; height:29px; padding:4px 6px; border:1px solid transparent; border-radius:6px; background:transparent; color:#697589; font-size:11px; white-space:nowrap; }
+.workspace-panel-controls button:hover:not(:disabled),.workspace-panel-controls button[aria-pressed="true"] { color:#006bdf; background:#eaf2ff; }
+.workspace-panel-controls button:focus-visible { outline:2px solid #007aff; outline-offset:2px; }
+.workspace-focus-toggle { min-width:46px !important; }
+body.workspace-left-hidden .editor-workspace,body.workspace-right-hidden .editor-workspace { --workspace-left-width:226px; --workspace-right-width:256px; }
+body.workspace-left-hidden .editor-columns,body.workspace-right-hidden .editor-columns { grid-template-columns:var(--workspace-left-width) minmax(0,1fr) var(--workspace-right-width); }
+body.workspace-left-hidden .editor-workspace { --workspace-left-width:0px; }
+body.workspace-right-hidden .editor-workspace { --workspace-right-width:0px; }
+body.workspace-left-hidden .editor-left,body.workspace-right-hidden .inspector { display:none; }
+body.workspace-left-hidden .editor-left,body.workspace-right-hidden .editor-left { grid-column:1; grid-row:1; }
+body.workspace-left-hidden .canvas-area,body.workspace-right-hidden .canvas-area { grid-column:2; grid-row:1; min-width:0; }
+body.workspace-left-hidden .inspector,body.workspace-right-hidden .inspector { grid-column:3; grid-row:1; }
+body.workspace-focus .rail { display:none; }
+body.workspace-focus .topbar { height:52px; }
+body.workspace-focus .topbar .app-name,body.workspace-focus .topbar .header-divider { display:none; }
+@media(max-width:1250px){
+  body.workspace-left-hidden .editor-workspace,body.workspace-right-hidden .editor-workspace { --workspace-left-width:195px; --workspace-right-width:225px; }
+  body.workspace-left-hidden .editor-workspace { --workspace-left-width:0px; }
+  body.workspace-right-hidden .editor-workspace { --workspace-right-width:0px; }
+  .workspace-panel-controls { gap:2px; padding-left:5px; }
+}
+@media print { .workspace-panel-controls { display:none !important; } }

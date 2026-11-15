@@ -1,0 +1,18 @@
+/* Native disclosure groups keep the inspector compact and keyboard accessible. */
+.inspector-panel{border-bottom:1px solid #e8ebf0;background:#fff}
+.inspector-panel-summary{min-height:47px;padding:13px 17px;display:flex;align-items:center;gap:9px;list-style:none;cursor:pointer;color:#394252;font-size:12px;font-weight:600;line-height:1.65;user-select:none}
+.inspector-panel-summary::-webkit-details-marker{display:none}
+.inspector-panel-summary::before{content:"";width:6px;height:6px;border-right:1.5px solid #7b8491;border-bottom:1.5px solid #7b8491;transform:rotate(-45deg);margin-right:2px;flex-shrink:0;transition:transform .12s ease}
+.inspector-panel[open]>.inspector-panel-summary::before{transform:rotate(45deg) translate(-1px,-1px)}
+.inspector-panel-summary:hover{background:#f7f9fc}
+.inspector-panel-summary:focus-visible{outline:2px solid #007aff;outline-offset:-3px;border-radius:5px;background:#f2f7ff}
+.inspector-panel-summary>small{margin-left:auto;color:#737d8b;font-size:10px;font-weight:400}
+.inspector-panel[open]>.inspector-panel-summary{color:#202936}
+.inspector-panel>.inspector-section{padding:2px 17px 17px;border-bottom:0}
+.inspector-panel>.inspector-section>h3[hidden]{display:none}
+.inspector-panel>.inspector-section>.field:last-child{margin-bottom:0}
+.inspector-panel>.inspector-section>.muted:first-child{margin-top:0}
+#block-form>.button-group.inspector-section{display:flex;gap:8px;padding:13px 17px;background:#fcfcfd}
+#block-form>.button-group.inspector-section .danger{margin-left:auto}
+#page-form+.inspector-section{padding:13px 17px}
+@media(prefers-reduced-motion:reduce){.inspector-panel-summary::before{transition:none}}
